@@ -1,0 +1,55 @@
+**** First-time system setup ****
+
+After installing Git, you should perform a set of one-time setup steps. These are system setups, meaning you only have to do them once per computer:
+$ git config --global user.name "Your Name"
+$ git config --global user.email your.email@example.com
+
+Set up command alias: use co in place of checkout
+$ git config --global alias.co checkout
+
+Set up the editor Git will use for commit messages. subl stands for Sublime Text
+$ git config --global core.editor "subl -w"
+
+**** First-time repository setup ****
+
+1) navigate to the root directory of the first app and initialize a new repository:
+$ git init
+
+Create a .gitignore file under the project root directory, example content
+	# Ignore all logfiles and tempfiles.
+	/log/*.log
+	/tmp
+	
+2) add all the files under the new project to Git
+$ git add .
+
+3) Commit the changes to your local staging area, where -m flag lets you to add a message for the commit
+$ git commit -m "initial commit"	
+
+4) show a list of commit messages
+$ git log
+
+5) Check out from a previous commit (and a -f flag to force overwriting the current changes)
+$ git checkout -f
+
+6) Push your code up to Github. Add GitHub as the origin for your main (master) branch and then push your repository up to GitHub
+$ git remote add origin https://github.com/<username>/<repo>.git
+$ git push -u origin master
+
+**** Branch, edit, commit, merge ****
+
+Switched to a new branch 'modify-README'
+$ git checkout -b modify-README
+
+List all the local branches, and the asterisk * identifies which branch we're currently on
+$ git branch
+
+Delete a branch
+$ git branch -d <branch-name>
+
+Git provides the -a flag as a shortcut for the (very common) case of committing all modifications to existing files (or files created using git mv, which don¡¯t count as new files to Git):
+$ git commit -a -m "some commit message"
+
+Merge changes from branch to master
+$ git checkout master  // switched to branch 'master'
+$ git merge <branch-name>
