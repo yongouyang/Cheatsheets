@@ -36,6 +36,10 @@ $ git checkout -f
 $ git remote add origin https://github.com/<username>/<repo>.git
 $ git push -u origin master
 
+7) remove remote origin after u rename your github repo, and then add the new one
+$ git remote rm origin
+$ git remote add origin https://github.com/<username>/<repo>.git
+
 **** Branch, edit, commit, merge ****
 
 Switched to a new branch 'modify-README'
